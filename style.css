@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --gray: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+
+  background: #ffff;
+}
+
+main {
+  background: url(images/Mobile.svg);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.avatar {
+  width: 10rem; /*mesmo que 160px onde é feito a conversão 160/16*/
+  margin: 11.5rem auto 0;
+
+  position: relative; /*garantir que no absolute seja alterado so no espaço desta div*/
+}
+
+.avatar span {
+  position: absolute; /*para deixar essa imagem por cima da outra*/
+  top: -15px;
+  z-index: 1; /*z é o eixo de profundidade*/
+}
+
+/* o > é para pegar imagem de primeiro nivel*/
+.avatar > img {
+  width: 10rem;
+  height: 11.5rem;
+
+  object-fit: cover; /*faz com que as imagem se adeque de acordo com as medidas acima*/
+
+  clip-path: polygon(
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%,
+    0 25%
+  ); /*deixa a imagem de acordo com a forma que colocar, no caso formato poligono e dentro passa as medidas em cada ponto*/
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: #ffff;
+}
+
+a {
+  color: var(--gray);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin-top: 2rem;
+  color: var(--gray);
+}
+
+ul {
+  margin-top: 4rem;
+  list-style: none; /*tira os pontos da lista*/
+  padding: 0;
+
+  display: flex;
+  gap: 0.5rem; /*espaço entre os itens*/
+  justify-content: center;
+}
